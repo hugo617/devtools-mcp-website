@@ -3,12 +3,13 @@ import { HlsVideo } from "@/components/ui/HlsVideo";
 
 export default function CtaFooter() {
   return (
-    <section id="contact" className="relative w-full">
+    <section id="contact" className="relative w-full overflow-hidden">
       {/* Video background */}
       <div className="absolute inset-0">
         <HlsVideo
           src="https://stream.mux.com/8wrHPCX2dC3msyYU9ObwqNdm00u3ViXvOSHUMRYSEe5Q.m3u8"
           className="absolute inset-0 w-full h-full object-cover"
+          style={{ transform: 'translateZ(0) scale(1.1)' }}
         />
       </div>
 

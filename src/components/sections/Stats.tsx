@@ -11,11 +11,12 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section id="pricing" className="relative w-full min-h-[500px]">
+    <section id="pricing" className="relative w-full min-h-[500px] overflow-hidden">
       <HlsVideo
         src="https://stream.mux.com/NcU3HlHeF7CUL86azTTzpy3Tlb00d6iF3BmCdFslMJYM.m3u8"
         className="absolute inset-0 w-full h-full object-cover"
         desaturated={true}
+        style={{ transform: 'translateZ(0) scale(1.1)' }}
       />
 
       <div className="absolute top-0 left-0 right-0 h-[200px] bg-gradient-to-b from-black to-transparent pointer-events-none z-[1]" />

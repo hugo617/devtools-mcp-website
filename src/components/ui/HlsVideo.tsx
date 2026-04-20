@@ -1,13 +1,15 @@
 import { useEffect, useRef } from "react";
 import Hls from "hls.js";
+import type { CSSProperties } from "react";
 
 interface HlsVideoProps {
   src: string;
   className?: string;
   desaturated?: boolean;
+  style?: CSSProperties;
 }
 
-export function HlsVideo({ src, className = "", desaturated = false }: HlsVideoProps) {
+export function HlsVideo({ src, className = "", desaturated = false, style }: HlsVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -26,6 +28,11 @@ export function HlsVideo({ src, className = "", desaturated = false }: HlsVideoP
     }
   }, [src]);
 
+  const mergedStyle: CSSProperties = {
+    ...style,
+    ...(desaturated ? { filter: "saturate(0)" } : {}),
+  };
+
   return (
     <video
       ref={videoRef}
@@ -34,7 +41,7 @@ export function HlsVideo({ src, className = "", desaturated = false }: HlsVideoP
       muted
       playsInline
       className={className}
-      style={desaturated ? { filter: "saturate(0)" } : undefined}
+      style={Object.keys(mergedStyle).length > 0 ? mergedStyle : undefined}
     />
   );
 }
