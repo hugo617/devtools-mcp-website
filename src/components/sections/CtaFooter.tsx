@@ -51,6 +51,26 @@ export default function CtaFooter() {
           </a>
         </div>
 
+        <div className="mt-12 w-full max-w-md">
+          <div className="liquid-glass rounded-full p-1 flex items-center">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="flex-1 bg-transparent text-white text-sm font-body px-4 py-2.5 outline-none placeholder:text-white/30"
+              aria-label="Email address"
+            />
+            <button
+              type="button"
+              className="bg-white text-black rounded-full px-5 py-2 text-sm font-body font-medium"
+            >
+              Subscribe
+            </button>
+          </div>
+          <p className="text-white/30 text-xs font-body font-light mt-3 text-center">
+            No spam. Unsubscribe anytime.
+          </p>
+        </div>
+
         {/* Footer bar */}
         <div className="mt-32 pt-8 border-t border-white/10 w-full max-w-7xl mx-auto flex flex-col sm:flex-row justify-between gap-4">
           <span className="text-white/40 text-xs font-body">

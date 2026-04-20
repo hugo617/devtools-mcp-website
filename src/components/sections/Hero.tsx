@@ -113,6 +113,23 @@ export default function Hero() {
           </motion.button>
         </motion.div>
 
+        {/* Scroll indicator */}
+        <motion.div
+          className="flex flex-col items-center gap-2 mt-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 0.8 }}
+        >
+          <span className="text-white/40 text-xs font-body font-light tracking-widest uppercase">
+            Scroll to explore
+          </span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            className="w-[1px] h-8 bg-gradient-to-b from-white/40 to-transparent"
+          />
+        </motion.div>
+
         {/* Partners bar */}
         <div className="mt-auto pb-8 pt-16 flex flex-col items-center gap-4">
           <span className="liquid-glass rounded-full px-4 py-1.5 text-xs font-body font-light text-white">
