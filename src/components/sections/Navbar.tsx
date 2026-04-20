@@ -1,9 +1,9 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { ArrowUpRight, Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "motion/react"
 
 const NAV_LINKS = [
-  { label: "Home", href: "#" },
+  { label: "Home", href: "/" },
   { label: "Services", href: "#services" },
   { label: "Work", href: "#work" },
   { label: "Process", href: "#process" },
@@ -12,10 +12,17 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 100)
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
-    <nav className="fixed top-4 left-0 right-0 z-50 px-8 lg:px-16 py-3">
-      <div className="flex items-center justify-between">
+    <nav className="fixed top-4 left-0 right-0 z-50 py-3">
+      <div className={`flex items-center justify-between transition-colors duration-300 ${scrolled ? "liquid-glass rounded-2xl mx-4" : "px-8 lg:px-16"}`}>
         <a href="/" className="flex items-center shrink-0">
           <img
             src="/logo-icon.svg"

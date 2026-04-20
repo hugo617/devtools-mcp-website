@@ -59,7 +59,7 @@ function FeatureCard({ icon: Icon, title, description, index }: FeatureCard & { 
 
 export default function FeaturesGrid() {
   return (
-    <section className="py-24 px-8 lg:px-16 max-w-7xl mx-auto">
+    <section id="process" className="py-24 px-8 lg:px-16 max-w-7xl mx-auto">
       <div className="text-center">
         <span className="liquid-glass rounded-full px-3.5 py-1 text-xs font-medium text-white font-body">
           Why Us

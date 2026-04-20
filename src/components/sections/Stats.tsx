@@ -10,7 +10,7 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="relative w-full min-h-[500px]">
+    <section id="pricing" className="relative w-full min-h-[500px]">
       <HlsVideo
         src="https://stream.mux.com/NcU3HlHeF7CUL86azTTzpy3Tlb00d6iF3BmCdFslMJYM.m3u8"
         className="absolute inset-0 w-full h-full object-cover"

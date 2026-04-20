@@ -4,7 +4,7 @@ import { HlsVideo } from "@/components/ui/HlsVideo";
 
 export default function StartSection() {
   return (
-    <section className="relative w-full min-h-[500px]">
+    <section id="services" className="relative w-full min-h-[500px]">
       <HlsVideo
         src="https://stream.mux.com/9JXDljEVWYwWu01PUkAemafDugK89o01BR6zqJ3aS9u00A.m3u8"
         className="absolute inset-0 w-full h-full object-cover"

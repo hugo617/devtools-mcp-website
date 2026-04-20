@@ -3,7 +3,7 @@ import { HlsVideo } from "@/components/ui/HlsVideo";
 
 export default function CtaFooter() {
   return (
-    <section className="relative w-full">
+    <section id="contact" className="relative w-full">
       {/* Video background */}
       <div className="absolute inset-0">
         <HlsVideo
