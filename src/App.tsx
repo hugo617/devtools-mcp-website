@@ -36,7 +36,7 @@ function App() {
       >
         <Navbar />
         <Hero />
-        <div className="bg-black">
+        <main role="main" className="bg-black">
           <StartSection />
           <FeaturesChess />
           <Marquee items={["Design", "Develop", "Deploy", "Iterate", "Optimize"]} speed={25} className="py-8" />
@@ -44,7 +44,7 @@ function App() {
           <Stats />
           <Testimonials />
           <CtaFooter />
-        </div>
+        </main>
       </motion.div>
     </div>
   );

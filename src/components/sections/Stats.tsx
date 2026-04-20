@@ -11,7 +11,7 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section id="pricing" className="relative w-full min-h-[500px] overflow-hidden">
+    <section id="pricing" className="relative w-full min-h-[500px] overflow-hidden" style={{ scrollMarginTop: '100px' }}>
       <HlsVideo
         src="https://stream.mux.com/NcU3HlHeF7CUL86azTTzpy3Tlb00d6iF3BmCdFslMJYM.m3u8"
         className="absolute inset-0 w-full h-full object-cover"
@@ -19,8 +19,8 @@ export default function Stats() {
         style={{ transform: 'translateZ(0) scale(1.1)' }}
       />
 
-      <div className="absolute top-0 left-0 right-0 h-[200px] bg-gradient-to-b from-black to-transparent pointer-events-none z-[1]" />
-      <div className="absolute bottom-0 left-0 right-0 h-[200px] bg-gradient-to-t from-black to-transparent pointer-events-none z-[1]" />
+      <div className="absolute top-0 left-0 right-0 h-[200px] bg-gradient-to-b from-black to-transparent pointer-events-none z-[1]" aria-hidden="true" />
+      <div className="absolute bottom-0 left-0 right-0 h-[200px] bg-gradient-to-t from-black to-transparent pointer-events-none z-[1]" aria-hidden="true" />
 
       <div className="relative z-10 min-h-[500px] flex items-center justify-center px-4 md:px-8">
         <motion.div

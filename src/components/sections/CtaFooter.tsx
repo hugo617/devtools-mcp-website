@@ -3,7 +3,7 @@ import { HlsVideo } from "@/components/ui/HlsVideo";
 
 export default function CtaFooter() {
   return (
-    <section id="contact" className="relative w-full overflow-hidden">
+    <section id="contact" className="relative w-full overflow-hidden" style={{ scrollMarginTop: '100px' }}>
       {/* Video background */}
       <div className="absolute inset-0">
         <HlsVideo
@@ -14,10 +14,10 @@ export default function CtaFooter() {
       </div>
 
       {/* Top gradient fade */}
-      <div className="absolute top-0 left-0 right-0 h-[200px] bg-gradient-to-b from-black to-transparent pointer-events-none z-[1]" />
+      <div className="absolute top-0 left-0 right-0 h-[200px] bg-gradient-to-b from-black to-transparent pointer-events-none z-[1]" aria-hidden="true" />
 
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-[200px] bg-gradient-to-t from-black to-transparent pointer-events-none z-[1]" />
+      <div className="absolute bottom-0 left-0 right-0 h-[200px] bg-gradient-to-t from-black to-transparent pointer-events-none z-[1]" aria-hidden="true" />
 
       {/* Content */}
       <motion.div

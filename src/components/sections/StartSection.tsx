@@ -4,15 +4,15 @@ import { HlsVideo } from "@/components/ui/HlsVideo";
 
 export default function StartSection() {
   return (
-    <section id="services" className="relative w-full min-h-[500px] overflow-hidden">
+    <section id="services" className="relative w-full min-h-[500px] overflow-hidden" style={{ scrollMarginTop: '100px' }}>
       <HlsVideo
         src="https://stream.mux.com/9JXDljEVWYwWu01PUkAemafDugK89o01BR6zqJ3aS9u00A.m3u8"
         className="absolute inset-0 w-full h-full object-cover"
         style={{ transform: 'translateZ(0) scale(1.1)' }}
       />
 
-      <div className="absolute top-0 left-0 right-0 h-[200px] bg-gradient-to-b from-black to-transparent pointer-events-none z-[1]" />
-      <div className="absolute bottom-0 left-0 right-0 h-[200px] bg-gradient-to-t from-black to-transparent pointer-events-none z-[1]" />
+      <div className="absolute top-0 left-0 right-0 h-[200px] bg-gradient-to-b from-black to-transparent pointer-events-none z-[1]" aria-hidden="true" />
+      <div className="absolute bottom-0 left-0 right-0 h-[200px] bg-gradient-to-t from-black to-transparent pointer-events-none z-[1]" aria-hidden="true" />
 
       <motion.div
         className="relative z-10 min-h-[500px] flex flex-col items-center justify-center text-center px-4 md:px-8"
@@ -37,6 +37,7 @@ export default function StartSection() {
         <button
           type="button"
           className="liquid-glass-strong rounded-full px-6 py-3 text-white font-body text-sm font-medium flex items-center gap-2 mt-8"
+          aria-label="Get started with AI web design"
         >
           Get Started
           <ArrowUpRight size={16} />

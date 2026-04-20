@@ -22,6 +22,7 @@ export default function Hero() {
           playsInline
           poster="/images/hero_bg.jpeg"
           className="w-full h-auto object-contain"
+          aria-hidden="true"
         >
           <source
             src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260307_083826_e938b29f-a43a-41ec-a153-3d4730578ab8.mp4"
@@ -31,10 +32,10 @@ export default function Hero() {
       </motion.div>
 
       {/* Mobile dark background fallback */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black md:hidden z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black md:hidden z-0" aria-hidden="true" />
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/5 z-0" />
+      <div className="absolute inset-0 bg-black/5 z-0" aria-hidden="true" />
 
       {/* Bottom gradient fade */}
       <div
@@ -43,6 +44,7 @@ export default function Hero() {
           height: "300px",
           background: "linear-gradient(to bottom, transparent, black)",
         }}
+        aria-hidden="true"
       />
 
       {/* Content */}
@@ -94,6 +96,7 @@ export default function Hero() {
             type="button"
             className="liquid-glass-strong rounded-full px-5 py-2.5 text-white font-body text-sm font-medium flex items-center gap-2"
             whileTap={{ scale: 0.97 }}
+            aria-label="Get started with AI-powered web design"
           >
             Get Started
             <ArrowUpRight size={16} />
@@ -103,6 +106,7 @@ export default function Hero() {
             type="button"
             className="flex items-center gap-2 text-white font-body text-sm font-medium"
             whileTap={{ scale: 0.97 }}
+            aria-label="Watch the promotional film"
           >
             <Play size={16} fill="white" />
             Watch the Film

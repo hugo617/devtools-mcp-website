@@ -23,7 +23,7 @@ const features = [
 
 export default function FeaturesChess() {
   return (
-    <section id="work" className="py-24 md:py-32 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
+    <section id="work" className="py-24 md:py-32 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto" style={{ scrollMarginTop: '100px' }}>
       <div className="mb-16">
         <span className="liquid-glass rounded-full px-3.5 py-1 text-xs font-medium text-white font-body">
           Capabilities
@@ -56,6 +56,7 @@ export default function FeaturesChess() {
             <button
               type="button"
               className="liquid-glass-strong rounded-full px-5 py-2.5 text-white font-body text-sm font-medium flex items-center gap-2"
+              aria-label={feature.cta}
             >
               {feature.cta}
               <ArrowUpRight className="h-4 w-4" />

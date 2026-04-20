@@ -21,12 +21,12 @@ export default function Navbar() {
   }, [])
 
   return (
-    <nav className="fixed top-4 left-0 right-0 z-50 py-3">
+    <nav className="fixed top-4 left-0 right-0 z-50 py-3" role="banner">
       <div className={`flex items-center justify-between transition-colors duration-300 ${scrolled ? "liquid-glass rounded-2xl mx-4" : "px-8 lg:px-16"}`}>
         <a href="/" className="flex items-center shrink-0">
           <img
             src="/logo-icon.svg"
-            alt="Logo"
+            alt="DevTools MCP logo"
             className="h-12 w-12"
           />
         </a>
