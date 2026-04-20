@@ -23,14 +23,17 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 px-8 lg:px-16 max-w-7xl mx-auto">
-      <span className="liquid-glass rounded-full px-3.5 py-1 text-xs font-medium text-white font-body">
-        What They Say
-      </span>
+    <section className="py-24 md:py-32 px-8 lg:px-16 max-w-7xl mx-auto">
+      <div className="text-center">
+        <span className="liquid-glass rounded-full px-3.5 py-1 text-xs font-medium text-white font-body self-center">
+          What They Say
+        </span>
 
-      <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.9] mt-6 mb-16">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.9] text-center mt-6 mb-16">
         Don&apos;t take our word for it.
       </h2>
+
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {testimonials.map((testimonial, index) => (

@@ -24,7 +24,7 @@ export default function StartSection() {
           How It Works
         </span>
 
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading italic tracking-tight leading-[0.9] text-white mt-6">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.9] mt-6">
           You dream it. We ship it.
         </h2>
 

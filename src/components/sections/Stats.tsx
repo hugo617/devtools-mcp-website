@@ -22,7 +22,7 @@ export default function Stats() {
 
       <div className="relative z-10 min-h-[500px] flex items-center justify-center px-8">
         <motion.div
-          className="liquid-glass rounded-3xl p-12 md:p-16 w-full max-w-5xl"
+          className="liquid-glass rounded-3xl p-8 md:p-12 lg:p-16 w-full max-w-5xl"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}

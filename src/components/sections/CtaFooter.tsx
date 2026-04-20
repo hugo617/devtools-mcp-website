@@ -26,11 +26,11 @@ export default function CtaFooter() {
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading italic text-white leading-[0.85] mb-6">
+        <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading italic text-white tracking-tight leading-[0.9] mb-6">
           Your next website starts here.
         </h2>
 
-        <p className="text-white/60 font-body font-light text-sm md:text-base max-w-lg mb-10">
+        <p className="text-white/60 font-body font-light text-sm md:text-base leading-relaxed max-w-lg mb-10">
           Book a free strategy call. See what AI-powered design can do. No commitment, no
           pressure. Just possibilities.
         </p>

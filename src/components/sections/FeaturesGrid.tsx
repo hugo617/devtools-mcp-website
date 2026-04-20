@@ -50,7 +50,7 @@ function FeatureCard({ icon: Icon, title, description, index }: FeatureCard & { 
       <h3 className="text-white font-body font-medium text-sm mb-2">
         {title}
       </h3>
-      <p className="text-white/60 font-body font-light text-sm leading-relaxed">
+      <p className="text-white/60 font-body font-light text-sm md:text-base leading-relaxed">
         {description}
       </p>
     </motion.div>
@@ -59,13 +59,13 @@ function FeatureCard({ icon: Icon, title, description, index }: FeatureCard & { 
 
 export default function FeaturesGrid() {
   return (
-    <section id="process" className="py-24 px-8 lg:px-16 max-w-7xl mx-auto">
+    <section id="process" className="py-24 md:py-32 px-8 lg:px-16 max-w-7xl mx-auto">
       <div className="text-center">
         <span className="liquid-glass rounded-full px-3.5 py-1 text-xs font-medium text-white font-body">
           Why Us
         </span>
 
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.9] mt-6 mb-16">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.9] text-center mt-6 mb-16">
           The difference is everything.
         </h2>
       </div>

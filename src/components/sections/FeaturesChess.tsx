@@ -23,7 +23,7 @@ const features = [
 
 export default function FeaturesChess() {
   return (
-    <section id="work" className="py-24 px-8 lg:px-16 max-w-7xl mx-auto">
+    <section id="work" className="py-24 md:py-32 px-8 lg:px-16 max-w-7xl mx-auto">
       <div className="mb-16">
         <span className="liquid-glass rounded-full px-3.5 py-1 text-xs font-medium text-white font-body">
           Capabilities
@@ -39,7 +39,7 @@ export default function FeaturesChess() {
           className={[
             'flex flex-col gap-12 lg:gap-20',
             feature.reversed ? 'lg:flex-row-reverse' : 'lg:flex-row',
-            index < features.length - 1 ? 'mb-24' : '',
+            index < features.length - 1 ? 'mb-16 md:mb-24' : '',
           ].join(' ')}
           initial={{ opacity: 0, x: feature.reversed ? 40 : -40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -50,7 +50,7 @@ export default function FeaturesChess() {
             <h3 className="text-3xl md:text-4xl font-heading italic text-white leading-[0.9] mb-4">
               {feature.title}
             </h3>
-            <p className="text-white/60 font-body font-light text-sm md:text-base mb-8 max-w-md">
+            <p className="text-white/60 font-body font-light text-sm md:text-base leading-relaxed mb-8 max-w-md">
               {feature.body}
             </p>
             <button
@@ -67,7 +67,7 @@ export default function FeaturesChess() {
               <img
                 src={feature.gif}
                 alt={feature.title}
-                className="w-full h-auto"
+                className="w-full h-auto hover:scale-[1.02] transition-transform duration-500"
               />
             </div>
           </div>

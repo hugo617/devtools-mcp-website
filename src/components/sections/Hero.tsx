@@ -49,9 +49,13 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col items-center text-center px-8 pt-24 md:pt-[150px]">
         {/* Badge pill */}
         <div className="liquid-glass rounded-full px-1 py-1 flex items-center gap-2">
-          <span className="bg-white text-black rounded-full px-3 py-1 text-xs font-semibold">
+          <motion.span
+            className="bg-white text-black rounded-full px-3 py-1 text-xs font-semibold inline-block"
+            animate={{ scale: [1, 1.05, 1] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
             New
-          </span>
+          </motion.span>
           <span className="text-white text-sm font-body font-light">
             Introducing AI-powered web design.
           </span>
@@ -86,21 +90,23 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1.1 }}
         >
-          <button
+          <motion.button
             type="button"
             className="liquid-glass-strong rounded-full px-5 py-2.5 text-white font-body text-sm font-medium flex items-center gap-2"
+            whileTap={{ scale: 0.97 }}
           >
             Get Started
             <ArrowUpRight size={16} />
-          </button>
+          </motion.button>
 
-          <button
+          <motion.button
             type="button"
             className="flex items-center gap-2 text-white font-body text-sm font-medium"
+            whileTap={{ scale: 0.97 }}
           >
             <Play size={16} fill="white" />
             Watch the Film
-          </button>
+          </motion.button>
         </motion.div>
 
         {/* Partners bar */}
@@ -110,13 +116,15 @@ export default function Hero() {
           </span>
           <div className="overflow-x-auto">
             <div className="flex items-center gap-12 md:gap-16 flex-nowrap">
-            {partners.map((partner) => (
-              <span
+            {partners.map((partner, index) => (
+              <motion.span
                 key={partner}
-                className="text-2xl md:text-3xl font-heading italic text-white"
+                className="text-2xl md:text-3xl font-heading italic text-white inline-block"
+                animate={{ y: [0, -5, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: index * 0.3 }}
               >
                 {partner}
-              </span>
+              </motion.span>
             ))}
             </div>
           </div>
