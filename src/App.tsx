@@ -4,6 +4,7 @@ import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
 import StartSection from "@/components/sections/StartSection";
 import FeaturesChess from "@/components/sections/FeaturesChess";
+import Marquee from "@/components/ui/Marquee";
 import FeaturesGrid from "@/components/sections/FeaturesGrid";
 import Stats from "@/components/sections/Stats";
 import Testimonials from "@/components/sections/Testimonials";
@@ -38,6 +39,7 @@ function App() {
         <div className="bg-black">
           <StartSection />
           <FeaturesChess />
+          <Marquee items={["Design", "Develop", "Deploy", "Iterate", "Optimize"]} speed={25} className="py-8" />
           <FeaturesGrid />
           <Stats />
           <Testimonials />
