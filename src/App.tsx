@@ -10,6 +10,8 @@ import Testimonials from "@/components/sections/Testimonials";
 import CtaFooter from "@/components/sections/CtaFooter";
 import LoadingScreen from "@/components/ui/LoadingScreen";
 import ScrollProgress from "@/components/ui/ScrollProgress";
+import BackToTop from "@/components/ui/BackToTop";
+import CursorGlow from "@/components/ui/CursorGlow";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,6 +24,8 @@ function App() {
   return (
     <div className="bg-black">
       <ScrollProgress />
+      <BackToTop />
+      <CursorGlow />
       <LoadingScreen isLoading={isLoading} />
       <motion.div
         initial={{ opacity: 0 }}
