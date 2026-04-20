@@ -52,7 +52,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="md:hidden liquid-glass rounded-full p-2 text-white"
+          className="md:hidden liquid-glass rounded-full p-2 text-white min-w-[44px] min-h-[44px] flex items-center justify-center"
           onClick={() => setIsOpen(true)}
           aria-label="Open menu"
         >
@@ -63,7 +63,7 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-lg flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-lg flex flex-col items-center justify-center gap-8 overflow-x-hidden"
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
@@ -71,7 +71,7 @@ export default function Navbar() {
           >
             <button
               type="button"
-              className="absolute top-8 right-8 text-white"
+              className="absolute top-8 right-8 text-white min-w-[44px] min-h-[44px] flex items-center justify-center"
               onClick={() => setIsOpen(false)}
               aria-label="Close menu"
             >

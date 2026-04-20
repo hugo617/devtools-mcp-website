@@ -23,7 +23,7 @@ const features = [
 
 export default function FeaturesChess() {
   return (
-    <section id="work" className="py-24 md:py-32 px-8 lg:px-16 max-w-7xl mx-auto">
+    <section id="work" className="py-24 md:py-32 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
       <div className="mb-16">
         <span className="liquid-glass rounded-full px-3.5 py-1 text-xs font-medium text-white font-body">
           Capabilities

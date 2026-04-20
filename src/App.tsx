@@ -9,6 +9,7 @@ import Stats from "@/components/sections/Stats";
 import Testimonials from "@/components/sections/Testimonials";
 import CtaFooter from "@/components/sections/CtaFooter";
 import LoadingScreen from "@/components/ui/LoadingScreen";
+import ScrollProgress from "@/components/ui/ScrollProgress";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <div className="bg-black">
+      <ScrollProgress />
       <LoadingScreen isLoading={isLoading} />
       <motion.div
         initial={{ opacity: 0 }}

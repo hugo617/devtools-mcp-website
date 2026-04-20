@@ -14,7 +14,7 @@ export default function StartSection() {
       <div className="absolute bottom-0 left-0 right-0 h-[200px] bg-gradient-to-t from-black to-transparent pointer-events-none z-[1]" />
 
       <motion.div
-        className="relative z-10 min-h-[500px] flex flex-col items-center justify-center text-center px-8"
+        className="relative z-10 min-h-[500px] flex flex-col items-center justify-center text-center px-4 md:px-8"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
@@ -24,7 +24,7 @@ export default function StartSection() {
           How It Works
         </span>
 
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.9] mt-6">
+        <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.9] mt-6">
           You dream it. We ship it.
         </h2>
 

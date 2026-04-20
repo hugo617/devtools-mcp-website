@@ -46,17 +46,17 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center text-center px-8 pt-24 md:pt-[150px]">
+      <div className="relative z-10 flex flex-col items-center text-center px-4 md:px-8 pt-24 md:pt-[150px]">
         {/* Badge pill */}
-        <div className="liquid-glass rounded-full px-1 py-1 flex items-center gap-2">
+        <div className="liquid-glass rounded-full px-1 py-1 flex items-center gap-2 max-w-[90vw] overflow-hidden">
           <motion.span
-            className="bg-white text-black rounded-full px-3 py-1 text-xs font-semibold inline-block"
+            className="bg-white text-black rounded-full px-3 py-1 text-xs font-semibold inline-block shrink-0"
             animate={{ scale: [1, 1.05, 1] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
             New
           </motion.span>
-          <span className="text-white text-sm font-body font-light">
+          <span className="text-white text-sm font-body font-light truncate">
             Introducing AI-powered web design.
           </span>
         </div>
@@ -66,7 +66,7 @@ export default function Hero() {
           <BlurText
             text="The Website Your Brand Deserves"
             as="h1"
-            className="text-6xl md:text-7xl lg:text-[5.5rem] font-heading italic text-foreground leading-[0.8] max-w-2xl tracking-[-4px]"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-heading italic text-foreground leading-[0.8] max-w-2xl tracking-[-4px]"
             animateOnView={false}
             delay={100}
           />
@@ -119,7 +119,7 @@ export default function Hero() {
             {partners.map((partner, index) => (
               <motion.span
                 key={partner}
-                className="text-2xl md:text-3xl font-heading italic text-white inline-block"
+                className="text-lg md:text-2xl lg:text-3xl font-heading italic text-white inline-block"
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: index * 0.3 }}
               >

@@ -26,7 +26,7 @@ export default function CtaFooter() {
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading italic text-white tracking-tight leading-[0.9] mb-6">
+        <h2 className="text-3xl md:text-6xl lg:text-7xl font-heading italic text-white tracking-tight leading-[0.9] mb-6">
           Your next website starts here.
         </h2>
 
@@ -35,7 +35,7 @@ export default function CtaFooter() {
           pressure. Just possibilities.
         </p>
 
-        <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row gap-4">
           <a
             href="#book"
             className="liquid-glass-strong rounded-full px-6 py-3 text-white font-body text-sm font-medium flex items-center gap-2"
@@ -51,7 +51,7 @@ export default function CtaFooter() {
         </div>
 
         {/* Footer bar */}
-        <div className="mt-32 pt-8 border-t border-white/10 w-full max-w-7xl mx-auto flex justify-between">
+        <div className="mt-32 pt-8 border-t border-white/10 w-full max-w-7xl mx-auto flex flex-col sm:flex-row justify-between gap-4">
           <span className="text-white/40 text-xs font-body">
             &copy; 2026 Studio. All rights reserved.
           </span>
