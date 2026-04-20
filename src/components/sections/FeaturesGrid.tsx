@@ -1,5 +1,6 @@
 import { Zap, Palette, BarChart3, Shield } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { motion } from "motion/react";
 
 interface FeatureCard {
   icon: LucideIcon;
@@ -34,9 +35,15 @@ const features: readonly FeatureCard[] = [
   },
 ] as const;
 
-function FeatureCard({ icon: Icon, title, description }: FeatureCard) {
+function FeatureCard({ icon: Icon, title, description, index }: FeatureCard & { index: number }) {
   return (
-    <div className="liquid-glass rounded-2xl p-6">
+    <motion.div
+      className="liquid-glass glass-hover rounded-2xl p-6"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.15 }}
+      viewport={{ once: true }}
+    >
       <div className="liquid-glass-strong rounded-full w-10 h-10 flex items-center justify-center mb-4">
         <Icon size={18} className="text-white" />
       </div>
@@ -46,7 +53,7 @@ function FeatureCard({ icon: Icon, title, description }: FeatureCard) {
       <p className="text-white/60 font-body font-light text-sm leading-relaxed">
         {description}
       </p>
-    </div>
+    </motion.div>
   );
 }
 
@@ -64,8 +71,8 @@ export default function FeaturesGrid() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {features.map((feature) => (
-          <FeatureCard key={feature.title} {...feature} />
+        {features.map((feature, index) => (
+          <FeatureCard key={feature.title} {...feature} index={index} />
         ))}
       </div>
     </section>

@@ -6,22 +6,32 @@ const partners = ["Stripe", "Vercel", "Linear", "Notion", "Figma"];
 
 export default function Hero() {
   return (
-    <section className="relative overflow-visible" style={{ height: "1000px" }}>
+    <section className="relative overflow-visible min-h-[700px] md:min-h-[1000px]" style={{ height: "auto", minHeight: "1000px" }}>
       {/* Background video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        poster="/images/hero_bg.jpeg"
-        className="absolute left-0 w-full h-auto object-contain z-0"
+      <motion.div
+        className="absolute left-0 w-full h-auto z-0 hidden md:block"
         style={{ top: "20%" }}
+        initial={{ scale: 1.1 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 2, ease: "easeOut" }}
       >
-        <source
-          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260307_083826_e938b29f-a43a-41ec-a153-3d4730578ab8.mp4"
-          type="video/mp4"
-        />
-      </video>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/hero_bg.jpeg"
+          className="w-full h-auto object-contain"
+        >
+          <source
+            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260307_083826_e938b29f-a43a-41ec-a153-3d4730578ab8.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </motion.div>
+
+      {/* Mobile dark background fallback */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black md:hidden z-0" />
 
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/5 z-0" />
@@ -36,7 +46,7 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center text-center px-8" style={{ paddingTop: "150px" }}>
+      <div className="relative z-10 flex flex-col items-center text-center px-8 pt-24 md:pt-[150px]">
         {/* Badge pill */}
         <div className="liquid-glass rounded-full px-1 py-1 flex items-center gap-2">
           <span className="bg-white text-black rounded-full px-3 py-1 text-xs font-semibold">
@@ -48,7 +58,7 @@ export default function Hero() {
         </div>
 
         {/* Heading */}
-        <div className="mt-8">
+        <div className="mt-8" style={{ textShadow: "0 0 60px rgba(255, 255, 255, 0.15)" }}>
           <BlurText
             text="The Website Your Brand Deserves"
             as="h1"
@@ -98,7 +108,8 @@ export default function Hero() {
           <span className="liquid-glass rounded-full px-4 py-1.5 text-xs font-body font-light text-white">
             Trusted by the teams behind
           </span>
-          <div className="flex items-center gap-12 md:gap-16">
+          <div className="overflow-x-auto">
+            <div className="flex items-center gap-12 md:gap-16 flex-nowrap">
             {partners.map((partner) => (
               <span
                 key={partner}
@@ -107,6 +118,7 @@ export default function Hero() {
                 {partner}
               </span>
             ))}
+            </div>
           </div>
         </div>
       </div>

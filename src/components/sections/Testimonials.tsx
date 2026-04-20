@@ -1,3 +1,5 @@
+import { motion } from "motion/react";
+
 const testimonials = [
   {
     quote:
@@ -31,10 +33,14 @@ export default function Testimonials() {
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {testimonials.map((testimonial) => (
-          <div
+        {testimonials.map((testimonial, index) => (
+          <motion.div
             key={testimonial.name}
-            className="liquid-glass rounded-2xl p-8"
+            className="liquid-glass glass-hover rounded-2xl p-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.15 }}
+            viewport={{ once: true }}
           >
             <p className="text-white/80 font-body font-light text-sm italic mb-6">
               &ldquo;{testimonial.quote}&rdquo;
@@ -45,7 +51,7 @@ export default function Testimonials() {
             <div className="text-white/50 font-body font-light text-xs">
               {testimonial.role}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

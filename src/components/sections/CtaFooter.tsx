@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { HlsVideo } from "@/components/ui/HlsVideo";
 
 export default function CtaFooter() {
@@ -18,7 +19,13 @@ export default function CtaFooter() {
       <div className="absolute bottom-0 left-0 right-0 h-[200px] bg-gradient-to-t from-black to-transparent pointer-events-none z-[1]" />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-8 py-32">
+      <motion.div
+        className="relative z-10 flex flex-col items-center justify-center text-center px-8 py-32"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+      >
         <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading italic text-white leading-[0.85] mb-6">
           Your next website starts here.
         </h2>
@@ -60,7 +67,7 @@ export default function CtaFooter() {
             </a>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import { motion } from "motion/react";
 import { HlsVideo } from "@/components/ui/HlsVideo";
 
 export default function StartSection() {
@@ -12,7 +13,13 @@ export default function StartSection() {
       <div className="absolute top-0 left-0 right-0 h-[200px] bg-gradient-to-b from-black to-transparent pointer-events-none z-[1]" />
       <div className="absolute bottom-0 left-0 right-0 h-[200px] bg-gradient-to-t from-black to-transparent pointer-events-none z-[1]" />
 
-      <div className="relative z-10 min-h-[500px] flex flex-col items-center justify-center text-center px-8">
+      <motion.div
+        className="relative z-10 min-h-[500px] flex flex-col items-center justify-center text-center px-8"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
         <span className="liquid-glass rounded-full px-3.5 py-1 text-xs font-medium text-white font-body">
           How It Works
         </span>
@@ -33,7 +40,7 @@ export default function StartSection() {
           Get Started
           <ArrowUpRight size={16} />
         </button>
-      </div>
+      </motion.div>
     </section>
   );
 }

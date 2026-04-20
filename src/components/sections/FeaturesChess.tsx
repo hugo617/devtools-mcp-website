@@ -1,4 +1,5 @@
 import { ArrowUpRight } from 'lucide-react'
+import { motion } from 'motion/react'
 
 import feature1Gif from '@/assets/feature-1.gif'
 import feature2Gif from '@/assets/feature-2.gif'
@@ -33,13 +34,17 @@ export default function FeaturesChess() {
       </div>
 
       {features.map((feature, index) => (
-        <div
+        <motion.div
           key={feature.title}
           className={[
             'flex flex-col gap-12 lg:gap-20',
             feature.reversed ? 'lg:flex-row-reverse' : 'lg:flex-row',
             index < features.length - 1 ? 'mb-24' : '',
           ].join(' ')}
+          initial={{ opacity: 0, x: feature.reversed ? 40 : -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-50px" }}
         >
           <div className="flex-1">
             <h3 className="text-3xl md:text-4xl font-heading italic text-white leading-[0.9] mb-4">
@@ -58,7 +63,7 @@ export default function FeaturesChess() {
           </div>
 
           <div className="flex-1">
-            <div className="liquid-glass rounded-2xl overflow-hidden">
+            <div className="liquid-glass glass-hover rounded-2xl overflow-hidden">
               <img
                 src={feature.gif}
                 alt={feature.title}
@@ -66,7 +71,7 @@ export default function FeaturesChess() {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
       ))}
     </section>
   )

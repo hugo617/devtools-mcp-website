@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { HlsVideo } from "@/components/ui/HlsVideo";
 
 const stats = [
@@ -20,7 +21,13 @@ export default function Stats() {
       <div className="absolute bottom-0 left-0 right-0 h-[200px] bg-gradient-to-t from-black to-transparent pointer-events-none z-[1]" />
 
       <div className="relative z-10 min-h-[500px] flex items-center justify-center px-8">
-        <div className="liquid-glass rounded-3xl p-12 md:p-16 w-full max-w-5xl">
+        <motion.div
+          className="liquid-glass rounded-3xl p-12 md:p-16 w-full max-w-5xl"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {stats.map((stat) => (
               <div key={stat.label}>
@@ -33,7 +40,7 @@ export default function Stats() {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
