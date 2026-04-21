@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 
 interface MarqueeProps {
   items: string[];
@@ -7,13 +7,14 @@ interface MarqueeProps {
 }
 
 export default function Marquee({ items, speed = 20, className = "" }: MarqueeProps) {
+  const prefersReduced = useReducedMotion();
   const doubled = [...items, ...items];
 
   return (
     <div className={`overflow-hidden ${className}`}>
       <motion.div
         className="flex whitespace-nowrap"
-        animate={{ x: ["0%", "-50%"] }}
+        animate={prefersReduced ? {} : { x: ["0%", "-50%"] }}
         transition={{
           x: {
             repeat: Infinity,

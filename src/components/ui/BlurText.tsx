@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 
 interface BlurTextProps {
   text: string;
@@ -18,6 +18,7 @@ export function BlurText({
   animateOnView = true,
   splitBy = "word",
 }: BlurTextProps) {
+  const prefersReduced = useReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(!animateOnView);
 
@@ -46,19 +47,21 @@ export function BlurText({
         {units.map((unit, i) => (
           <motion.span
             key={i}
-            initial={{
+            initial={prefersReduced ? {} : {
               filter: "blur(10px)",
               opacity: 0,
               y: 50,
             }}
             animate={
-              isVisible
+              prefersReduced
                 ? { filter: "blur(0px)", opacity: 1, y: 0 }
-                : {
-                    filter: "blur(10px)",
-                    opacity: 0,
-                    y: 50,
-                  }
+                : isVisible
+                  ? { filter: "blur(0px)", opacity: 1, y: 0 }
+                  : {
+                      filter: "blur(10px)",
+                      opacity: 0,
+                      y: 50,
+                    }
             }
             transition={{
               duration: 0.7,

@@ -1,27 +1,15 @@
 import { motion } from "motion/react";
-import { HlsVideo } from "@/components/ui/HlsVideo";
+import { VideoSection } from "@/components/ui/VideoSection";
 
 export default function CtaFooter() {
   return (
-    <section id="contact" className="relative w-full overflow-hidden" style={{ scrollMarginTop: '100px' }}>
-      {/* Video background */}
-      <div className="absolute inset-0">
-        <HlsVideo
-          src="https://stream.mux.com/8wrHPCX2dC3msyYU9ObwqNdm00u3ViXvOSHUMRYSEe5Q.m3u8"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ transform: 'translateZ(0) scale(1.1)' }}
-        />
-      </div>
-
-      {/* Top gradient fade */}
-      <div className="absolute top-0 left-0 right-0 h-[200px] bg-gradient-to-b from-black to-transparent pointer-events-none z-[1]" aria-hidden="true" />
-
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-[200px] bg-gradient-to-t from-black to-transparent pointer-events-none z-[1]" aria-hidden="true" />
-
-      {/* Content */}
+    <VideoSection
+      videoSrc="https://stream.mux.com/8wrHPCX2dC3msyYU9ObwqNdm00u3ViXvOSHUMRYSEe5Q.m3u8"
+      style={{ scrollMarginTop: "100px" }}
+      id="contact"
+    >
       <motion.div
-        className="relative z-10 flex flex-col items-center justify-center text-center px-8 py-32"
+        className="flex flex-col items-center justify-center text-center px-8 py-32"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
@@ -52,20 +40,21 @@ export default function CtaFooter() {
         </div>
 
         <div className="mt-12 w-full max-w-md">
-          <div className="liquid-glass rounded-full p-1 flex items-center">
+          <form className="liquid-glass rounded-full p-1 flex items-center" onSubmit={(e) => e.preventDefault()}>
             <input
               type="email"
               placeholder="Enter your email"
+              required
               className="flex-1 bg-transparent text-white text-sm font-body px-4 py-2.5 outline-none placeholder:text-white/30"
               aria-label="Email address"
             />
             <button
-              type="button"
+              type="submit"
               className="bg-white text-black rounded-full px-5 py-2 text-sm font-body font-medium"
             >
               Subscribe
             </button>
-          </div>
+          </form>
           <p className="text-white/30 text-xs font-body font-light mt-3 text-center">
             No spam. Unsubscribe anytime.
           </p>
@@ -89,6 +78,6 @@ export default function CtaFooter() {
           </div>
         </div>
       </motion.div>
-    </section>
+    </VideoSection>
   );
 }

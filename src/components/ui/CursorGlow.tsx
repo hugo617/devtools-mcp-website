@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 
 export default function CursorGlow() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+  const prefersReduced = useReducedMotion();
+
+  if (prefersReduced || !isDesktop) return null;
 
   useEffect(() => {
     const mql = window.matchMedia("(pointer: fine)");
@@ -17,9 +20,13 @@ export default function CursorGlow() {
   }, []);
 
   useEffect(() => {
+    let rafId: number;
     const handleMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
       if (!isVisible) setIsVisible(true);
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        setPosition({ x: e.clientX, y: e.clientY });
+      });
     };
 
     const handleMouseLeave = () => setIsVisible(false);
@@ -35,8 +42,6 @@ export default function CursorGlow() {
       document.removeEventListener("mouseenter", handleMouseEnter);
     };
   }, [isVisible]);
-
-  if (!isDesktop) return null;
 
   return (
     <motion.div

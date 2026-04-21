@@ -16,7 +16,13 @@ export default function LoadingScreen({ isLoading }: { isLoading: boolean }) {
             transition={{ duration: 0.5 }}
             className="flex flex-col items-center gap-4"
           >
-            <img src="/logo-icon.svg" alt="Loading" className="h-16 w-16 animate-pulse" />
+            <motion.img
+              src="/logo-icon.svg"
+              alt="Loading"
+              className="h-16 w-16"
+              animate={{ opacity: [1, 0.5, 1] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            />
             <span className="text-white/60 font-body text-sm font-light tracking-widest uppercase">
               Loading
             </span>

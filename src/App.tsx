@@ -18,8 +18,18 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000);
-    return () => clearTimeout(timer);
+    let hidden = true;
+    const hideLoader = () => {
+      if (!hidden) return;
+      hidden = false;
+      setIsLoading(false);
+    };
+    window.addEventListener("load", hideLoader);
+    const safetyTimer = setTimeout(hideLoader, 4000);
+    return () => {
+      window.removeEventListener("load", hideLoader);
+      clearTimeout(safetyTimer);
+    };
   }, []);
 
   return (
